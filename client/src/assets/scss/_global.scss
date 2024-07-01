@@ -1,0 +1,161 @@
+@use '../scss/var';
+@use '../scss/mixin';
+
+@import url('https://fonts.cdnfonts.com/css/chilling-nightime');
+@import url('https://fonts.cdnfonts.com/css/nextir-brush-personal-use');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  background-color: #181717;
+}
+
+p,
+h1,
+h2,
+h3,
+a,
+li {
+  color: var.$color_white;
+}
+
+main {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var.$dark_gray;
+  padding: 1.5rem 0.5rem;
+  row-gap: 1.5rem;
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  text-align: center;
+}
+
+.form {
+  width: 80%;
+
+  @include mixin.small {
+    width: 50%;
+  }
+
+  @include mixin.medium {
+    width: 40%;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.info {
+  font-size: 0.8rem;
+  font-style: italic;
+  padding-top: 1rem;
+}
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, z-index 0.3s;
+}
+
+.card-content {
+  width: 100%;
+  transition: transform 0.3s ease-in-out, z-index 0.3s;
+}
+
+/* Styles pour les flèches de navigation */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  /* Change la couleur des flèches */
+  width: 50px;
+  /* Change la taille des flèches */
+  height: 50px;
+  /* Change la taille des flèches */
+}
+
+/* Styles pour les points de pagination */
+.swiper-pagination-bullet {
+  background: white;
+  /* Change la couleur des points de pagination */
+  width: 12px;
+  /* Change la taille des points de pagination */
+  height: 12px;
+  /* Change la taille des points de pagination */
+  opacity: 1;
+  /* Assure que les points sont complètement visibles */
+}
+
+.swiper-pagination-bullet-active {
+  background: white;
+  /* Assure que le point actif est également blanc */
+  opacity: 1;
+  /* Assure que le point actif est complètement visible */
+}
+
+@media (max-width: 640px) {
+  .swiper-slide {
+    width: 100% !important;
+    flex-shrink: 0;
+  }
+
+  .mySwiper .swiper-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+.centered-menu {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  position: absolute !important;
+}
+
+textarea {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.80rem;
+  padding: 16px 12px;
+  border-radius: 4px 4px 0 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  resize: vertical;
+  margin-bottom: 1rem;
+
+  &:focus {
+    outline: none;
+    border-color: #949494;
+  }
+
+  @media (min-width: 600px) {
+      font-size: 0.85rem;
+    } 
+
+  @media (min-width: 960px) {
+      font-size: 1rem;
+    }
+}
